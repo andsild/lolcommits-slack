@@ -26,15 +26,15 @@ module Lolcommits
       def run_capture_ready
         retries = RETRY_COUNT
         begin
-          print "Posting to Slack ... "
+          print "Posting to Mumble ... "
           response = RestClient.post(
             ENDPOINT_URL,
             file: File.new(runner.lolcommit_path),
-            token: configuration[:access_token],
+            url: configuration[:url],
             filetype: 'jpg',
             filename: runner.sha,
             title: runner.message + "[#{runner.vcs_info.repo}]",
-            channels: configuration[:channels]
+            channels: configuration[:channel]
           )
 
           debug response
@@ -65,18 +65,17 @@ module Lolcommits
         options = super
 
         if options[:enabled]
-          print "open the url below and issue a token for your user:\n"
-          print "https://api.slack.com/custom-integrations/legacy-tokens\n"
-          print "enter the generated token below, then press enter: (e.g. xxxx-xxxxxxxxx-xxxx) \n"
-          code = parse_user_input(gets.strip)
+          print "enter the url of the server, then press enter: (e.g. xxxx-xxxxxxxxx-xxxx) \n"
+          url = parse_user_input(gets.strip)
 
-          print "enter a comma-seperated list of channel ids to post lolcommits in, then press enter: (e.g. c1234567890,c1234567890)\n"
-          print "note: you must use channel ids (not channel names). grab them from here; https://api.slack.com/methods/channels.list/test\n"
-          channels = parse_user_input(gets.strip)
+          print "enter a channel id\n"
+          print "note: to see channel id, use the following \n"
+          channelId = parse_user_input(gets.strip)
 
           options.merge!(
-            access_token: code,
-            channels: channels
+            url: url,
+            server_id: serverId
+            channel_id: channelId
           )
         end
 

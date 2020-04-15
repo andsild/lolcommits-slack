@@ -23,8 +23,8 @@ describe Lolcommits::Plugin::Slack do
     def valid_enabled_config
       {
         enabled: true,
-        access_token: 'acbd-1234-wxyz-5678',
-        channels: 'c123,c456'
+        url: 'qwde.no:8080',
+        channel: '1'
       }
     end
 
@@ -78,14 +78,14 @@ describe Lolcommits::Plugin::Slack do
       it 'should allow plugin options to be configured' do
         configured_plugin_options = {}
 
-        fake_io_capture(inputs: %w(true abc-def c1,c3,c4)) do
+        fake_io_capture(inputs: %w(true qwde.no:8080 1)) do
           configured_plugin_options = plugin.configure_options!
         end
 
         _(configured_plugin_options).must_equal({
           enabled: true,
-          access_token: 'abc-def',
-          channels: 'c1,c3,c4'
+          url: 'qwde.no:8080',
+          channel: '1'
         })
       end
 
