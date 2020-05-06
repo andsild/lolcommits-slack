@@ -1,3 +1,5 @@
+# WIP - not functioning
+
 # Lolcommits Mumble
 
 [![Gem](https://img.shields.io/gem/v/lolcommits-mumble.svg?style=flat)](http://rubygems.org/gems/lolcommits-mumble)
