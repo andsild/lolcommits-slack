@@ -15,7 +15,7 @@ end
 
 # plugin gem test libs
 require 'webmock/minitest'
-require 'lolcommits/plugin/slack'
+require 'lolcommits/plugin/mumble'
 require 'minitest/autorun'
 
 # swallow all debug output during test runs

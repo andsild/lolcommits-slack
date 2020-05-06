@@ -1,22 +1,22 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'lolcommits/slack/version'
+require 'lolcommits/mumble/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = "lolcommits-slack"
-  spec.version     = Lolcommits::Slack::VERSION
+  spec.name        = "lolcommits-mumble"
+  spec.version     = Lolcommits::Mumble::VERSION
   spec.authors     = ["Matthew Hutchinson"]
   spec.email       = ["matt@hiddenloop.com"]
-  spec.summary     = %q{Sends lolcommits to one (or more) Slack channels}
-  spec.homepage    = "https://github.com/lolcommits/lolcommits-slack"
+  spec.summary     = %q{Sends lolcommits to one (or more) Mumble channels}
+  spec.homepage    = "https://github.com/lolcommits/lolcommits-mumble"
   spec.license     = "LGPL-3.0"
-  spec.description = %q{Automatically post your lolcommits to Slack}
+  spec.description = %q{Automatically post your lolcommits to Mumble}
 
   spec.metadata = {
-    "homepage_uri"      => "https://github.com/lolcommits/lolcommits-slack",
-    "changelog_uri"     => "https://github.com/lolcommits/lolcommits-slack/blob/master/CHANGELOG.md",
-    "source_code_uri"   => "https://github.com/lolcommits/lolcommits-slack",
-    "bug_tracker_uri"   => "https://github.com/lolcommits/lolcommits-slack/issues",
+    "homepage_uri"      => "https://github.com/lolcommits/lolcommits-mumble",
+    "changelog_uri"     => "https://github.com/lolcommits/lolcommits-mumble/blob/master/CHANGELOG.md",
+    "source_code_uri"   => "https://github.com/lolcommits/lolcommits-mumble",
+    "bug_tracker_uri"   => "https://github.com/lolcommits/lolcommits-mumble/issues",
     "allowed_push_host" => "https://rubygems.org"
   }
 
